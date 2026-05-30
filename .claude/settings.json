@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "$machinePath = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine'); $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User'); $env:PATH = $machinePath + ';' + $userPath; Set-Location 'c:\\Users\\rflvc\\Downloads\\Projeto do Claudecode'; git add -A; $status = git status --porcelain; if ($status) { git commit -m 'auto: atualizacao via Claude Code'; git push origin master } 2>$null",
+            "timeout": 30,
+            "statusMessage": "Sincronizando com GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}

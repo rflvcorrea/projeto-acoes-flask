@@ -31,3 +31,16 @@ Single-file Flask app (`app.py`) with one route (`/`) that fetches live stock da
 - `CORES` — per-stock line colors used in both charts.
 
 **Deployment:** `Procfile` targets Heroku/Railway-style platforms via `gunicorn app:app`.
+
+## GitHub
+
+Repositório: https://github.com/rflvcorrea/projeto-acoes-flask
+
+**Auto-sync:** toda alteração feita pelo Claude Code via Edit ou Write é automaticamente commitada e enviada ao GitHub via hook configurado em `.claude/settings.json`. Não é necessário fazer push manualmente.
+
+Para atualizar manualmente:
+```bash
+git add -A
+git commit -m "mensagem"
+git push origin master
+```
