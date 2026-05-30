@@ -3,3 +3,5 @@ gunicorn
 yfinance
 pandas
 plotly
+selenium
+webdriver-manager
